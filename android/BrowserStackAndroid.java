@@ -12,14 +12,20 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 
 public class BrowserStackAndroid {
 
-    public static String accessKey = "BROWSERSTACK_USERNAME";
-    public static String userName = "BROWSERSTACK_ACCESS_KEY";
+    String username = System.getenv("BROWSERSTACK_USERNAME");
+    String accessKey = System.getenv("BROWSERSTACK_ACCESS_KEY");
+    String app = System.getenv("BROWSERSTACK_APP_ID");
+    
+//     public static String accessKey = "BROWSERSTACK_USERNAME";
+//     public static String userName = "BROWSERSTACK_ACCESS_KEY";
 
     public static void main(String args[]) throws MalformedURLException, InterruptedException {
         DesiredCapabilities capabilities = new DesiredCapabilities();
 
-        capabilities.setCapability("device", "Samsung Galaxy S7");
-        capabilities.setCapability("app", "bs://<hashed app-id>");
+//         capabilities.setCapability("device", "Samsung Galaxy S7");
+//         capabilities.setCapability("app", "bs://<hashed app-id>");
+        capabilities.setCapability("device", "Samsung Galaxy S8");
+        capabilities.setCapability("app", app);
 
         AndroidDriver<AndroidElement> driver = new AndroidDriver<AndroidElement>(new URL("https://"+userName+":"+accessKey+"@hub.browserstack.com/wd/hub"), capabilities);
 
