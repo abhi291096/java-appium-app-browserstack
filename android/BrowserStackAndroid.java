@@ -25,7 +25,7 @@ public class BrowserStackAndroid {
 //         capabilities.setCapability("device", "Samsung Galaxy S7");
 //         capabilities.setCapability("app", "bs://<hashed app-id>");
         capabilities.setCapability("device", "Samsung Galaxy S8");
-        capabilities.setCapability("app", app);
+        capabilities.setCapability("app", "bs://766f3effdf2d3b8dcaa6428ab573c6143ed11dfd");
 
         AndroidDriver<AndroidElement> driver = new AndroidDriver<AndroidElement>(new URL("https://"+userName+":"+accessKey+"@hub.browserstack.com/wd/hub"), capabilities);
 
